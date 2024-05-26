@@ -1,5 +1,6 @@
 from csv import DictReader
 from random import randint
+import json
 
 header = ["Name", "Age"]
 name = ["Bob", "Tom", "Jerry", "Jesus", "\"Korean, Jesus\"", "Maple", "Lisa", "Jack", "Moby", "Obama"]
@@ -10,6 +11,7 @@ print("Headers:", header)
 print("Person:", person)
 print()
 
+# file closes automatically
 with open("TEST DATA.txt", "w") as f: # write file
     f.write(",".join(header))
     for name in person:
@@ -41,3 +43,10 @@ with open("TEST DATA.txt", "r") as f: # read file, DictReader
 
 for row in reader:
     print(f"Person: {row['Name']}, Age: {row['Age']}")
+
+# sample code for json files 
+with open("TEST DATA 2.json", "r") as f: 
+    data = json.load(f)
+
+print("Data:", data)
+
