@@ -15,6 +15,22 @@ result = lst.copy()
 result = bubble_sort(result)
 print("Bubble sort:", result)
 
+# optimized bubble sort using last exchange index 
+def optimized_bubble_sort(lst):
+    n = len(lst) - 1
+    while n > 0: 
+        last_exchange_index = 0
+        for i in range(n):
+            if lst[i] > lst[i + 1]:
+                lst[i], lst[i + 1] = lst[i + 1], lst[i]
+                last_exchange_index = i
+        n = last_exchange_index
+    return lst
+
+result = lst.copy()
+result = optimized_bubble_sort(result)
+print("Optimized bubble sort:", result)
+
 def insertion_sort(lst):
     for i in range(1, len(lst)):
         temp = lst[i]
