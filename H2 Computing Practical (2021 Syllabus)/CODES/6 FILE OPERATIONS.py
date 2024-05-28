@@ -46,7 +46,9 @@ for row in reader:
 
 # sample code for json files 
 with open("TEST DATA 2.json", "r") as f: 
+    # json.load returns a json object, similar to python dictionary
     data = json.load(f)
 
-print("Data:", data)
-
+print()
+# method in json library to print json object in readable format
+print(json.dumps(data, indent=2))
